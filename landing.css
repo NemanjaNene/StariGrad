@@ -1,0 +1,463 @@
+/* ===== Variables ===== */
+:root {
+    --primary-color: #c9a961;
+    --primary-dark: #a68a4d;
+    --secondary-color: #2c2416;
+    --accent-color: #d4af6a;
+    --gold-light: #e6d5a8;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --white: #ffffff;
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.2);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background: var(--secondary-color);
+    min-height: 100vh;
+}
+
+/* ===== Background ===== */
+.landing-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 36, 22, 0.95), rgba(201, 169, 97, 0.3)), 
+                url('slike/stari grad.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.landing-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Container ===== */
+.landing-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Header ===== */
+.landing-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-animation {
+    margin-bottom: 40px;
+}
+
+.logo-animation h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--primary-color);
+    letter-spacing: 12px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.logo-line {
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 0 auto 20px;
+}
+
+.logo-animation p {
+    font-size: 14px;
+    color: var(--gold-light);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: var(--gold-light);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ===== Halls Selection ===== */
+.halls-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.hall-choice-card {
+    background: var(--white);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transition: var(--transition);
+    position: relative;
+    animation: fadeInUp 0.8s ease;
+    animation-fill-mode: both;
+}
+
+.hall-choice-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.hall-choice-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.hall-choice-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hall-choice-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 40px 100px rgba(201, 169, 97, 0.4);
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-badge.popular {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: var(--white);
+    animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.card-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.hall-choice-card:hover .card-image img {
+    transform: scale(1.15);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+}
+
+.capacity-badge {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.capacity-badge i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+/* ===== Card Content ===== */
+.card-content {
+    padding: 35px;
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.card-subtitle {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.card-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.feature-item i {
+    color: #4caf50;
+    font-size: 16px;
+}
+
+.card-stats {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    background: #f8f6f3;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.stat-item i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+/* ===== Select Button ===== */
+.select-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+}
+
+.select-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(201, 169, 97, 0.6);
+}
+
+.select-btn i {
+    transition: var(--transition);
+}
+
+.select-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* ===== Footer ===== */
+.landing-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    animation: fadeIn 1.5s ease 1s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.landing-footer p {
+    color: var(--white);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.landing-footer i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.landing-footer a {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.landing-footer a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+    .halls-selection {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-container {
+        padding: 40px 15px;
+    }
+
+    .logo-animation h1 {
+        font-size: 48px;
+        letter-spacing: 8px;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .halls-selection {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card-features {
+        grid-template-columns: 1fr;
+    }
+
+    .card-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .landing-footer p {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-animation h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .card-content h3 {
+        font-size: 26px;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .select-btn {
+        font-size: 14px;
+        padding: 15px;
+    }
+}

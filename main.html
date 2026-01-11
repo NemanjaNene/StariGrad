@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stari Grad - Restoran za venčanja i ostale svečanosti. Idealan prostor za vaše posebne trenutke.">
+    <title>Stari Grad - Event Hall | Sale za venčanja i svečanosti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="logo-loader">
+                <h1>STARI GRAD</h1>
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>STARI GRAD</h1>
+                    <p>Event Hall</p>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Naslovna</a></li>
+                    <li><a href="#about">O Nama</a></li>
+                    <li class="hall-selector">
+                        <a href="#" class="hall-dropdown-toggle">
+                            <i class="fas fa-building"></i>
+                            <span id="currentHall">Izabrana Sala</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="hall-dropdown">
+                            <li><a href="index.html"><i class="fas fa-exchange-alt"></i> Promeni salu</a></li>
+                            <li><a href="main.html?hall=velika"><i class="fas fa-crown"></i> Velika sala</a></li>
+                            <li><a href="main.html?hall=srednja"><i class="fas fa-star"></i> Srednja sala</a></li>
+                            <li><a href="main.html?hall=mala"><i class="fas fa-heart"></i> Mala sala</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#menu">Meni</a></li>
+                    <li><a href="#gallery">Galerija</a></li>
+                    <li><a href="#virtual-tour">Virtuelna Tura</a></li>
+                    <li><a href="#booking">Rezervacije</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('slike/stari grad.webp')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('slike/unnamed.webp')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('slike/unnamed (1).webp')">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text-animation">
+                <h2 class="hero-subtitle">Restoran za venčanja i ostale svečanosti</h2>
+                <h1 class="hero-title">
+                    <span class="title-line">STARI</span>
+                    <span class="title-line">GRAD</span>
+                </h1>
+                <div class="hero-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-star"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="hero-description">Gde tradicija susreće eleganciju i stvaraju se nezaboravne uspomene</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Kontaktirajte Nas</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#virtual-tour" class="btn btn-secondary">
+                        <span>Virtuelna Tura</span>
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-controls">
+            <button class="slider-control prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-control next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Skrolujte</span>
+        </div>
+    </section>
+
+    <!-- Special Offer Banner -->
+    <section class="special-offer">
+        <div class="offer-wrapper">
+            <div class="offer-background"></div>
+            <div class="container">
+                <div class="offer-content">
+                    <div class="offer-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="offer-text">
+                        <h3>SPECIJALNA PONUDA</h3>
+                        <p><strong>RADNIM DANIMA - 10% POPUSTA</strong></p>
+                    </div>
+                    <div class="offer-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-number" data-target="600">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">organizovanih događaja</div>
+                    <p class="stat-description">Za nepunih šest godina od otvaranja, organizovali smo preko 600 različitih proslava</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="1500">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Zadovoljnih klijenata</div>
+                    <p class="stat-description">Mnogi klijenti su, nakon prve proslave kod nas, odlučili da im adresa za sve buduće svečanosti postanemo baš mi</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Godina tradicije</div>
+                    <p class="stat-description">Decenija i po iskustva u organizaciji najvažnijih trenutaka u životu naših klijenata</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content" data-aos="fade-up">
+                <h2 class="intro-title">Jedinstven način organizacije događaja</h2>
+                <p class="intro-text">
+                    Svi želimo da baš naša svečanost bude dugo pamćena po dobrom provodu i lepim uspomenama, 
+                    a preduslov za tako nešto je takva organizacija da se <strong>svaki gost</strong> oseti 
+                    jednako važnim <strong>kao najsjajnija uspomena</strong> iz vašeg života.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Ko smo mi</span>
+                <h2 class="section-title">Organizujte venčanje iz snova</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">
+                        <strong>Stari Grad Event Hall</strong> je savršeno mesto za Vaše najvažnije trenutke. 
+                        Sa dugogodišnjom tradicijom u organizaciji proslava, donosimo Vam jedinstveno iskustvo 
+                        koje spaja šarm starog vremena sa modernim pristupom organizacije događaja.
+                    </p>
+                    <p>
+                        Naš tim <strong>iskusnih profesionalaca</strong> posvećen je tome da svaki Vaš poseban 
+                        trenutak učini nezaboravnim. Od venčanja i proslave rođendana do korporativnih događaja, 
+                        pružamo kompletnu uslugu koja prevazilazi očekivanja.
+                    </p>
+                    <p>
+                        Savršena lokacija, elegantni ambijent i vrhunska usluga čine nas idealnim izborom 
+                        za sve vrste svečanosti. Dozvolite nam da Vaš san pretvorimo u stvarnost.
+                    </p>
+                    <div class="about-buttons">
+                        <a href="#services" class="btn btn-primary">
+                            <span>Više o nama</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Kako do nas</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-frame">
+                        <img src="slike/stari grad.webp" alt="Stari Grad Event Hall">
+                        <div class="image-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Gastronomija</span>
+                <h2 class="section-title">Naš Meni</h2>
+                <p class="section-description">Vrhunska kuhinja pripremljena od najkvalitetnijih sastojaka</p>
+            </div>
+
+            <div class="menu-tabs" data-aos="fade-up">
+                <button class="menu-tab active" data-menu="mrsni">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>Mrsni Meni</span>
+                </button>
+                <button class="menu-tab" data-menu="posni">
+                    <i class="fas fa-leaf"></i>
+                    <span>Posni Meni</span>
+                </button>
+            </div>
+
+            <!-- Mrsni Meni -->
+            <div class="menu-content active" id="menu-mrsni" data-aos="fade-up">
+                <div class="menu-grid">
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-star"></i>
+                            Predjela
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Domaća pršuta i sir</h4>
+                                    <p>Tradicionalna domaća pršuta sa lokalnim sirevima</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Rolovani odrezak sa povrćem</h4>
+                                    <p>Pileći odrezak sa začinskim povrćem</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Carpaccio od tune</h4>
+                                    <p>Sveža tuna sa rukolom i parmezanom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-utensils"></i>
+                            Glavna jela
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Teletina ispod sača</h4>
+                                    <p>Tradicionalna priprema sa pečenim krompirićem</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Ćuretina u sosu od pečuraka</h4>
+                                    <p>Ćureći file sa šampinjonima i pavlakom</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Roštilj miks</h4>
+                                    <p>Ražnjići, pljeskavica, kobasica sa lepinjom</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Losos sa povrćem</h4>
+                                    <p>Svež losos na žaru sa grilovanih povrćem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-ice-cream"></i>
+                            Dezert
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Domaća torta po izboru</h4>
+                                    <p>Čokolada, voće, orasi - biramo zajedno</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Panna cotta</h4>
+                                    <p>Sa preljevom od šumskog voća</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-wine-glass"></i>
+                            Piće
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Domaća rakija</h4>
+                                    <p>Šljivovica, kajsija, lozova</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Vina</h4>
+                                    <p>Bela, crvena i roze vina domaćih vinara</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Bezalkoholna pića</h4>
+                                    <p>Sokovi, vode, energetska pića</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posni Meni -->
+            <div class="menu-content" id="menu-posni" data-aos="fade-up">
+                <div class="menu-grid">
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-leaf"></i>
+                            Predjela
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Grčka salata</h4>
+                                    <p>Svež paradajz, krastavci, paprika, masline</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Humus sa pirinčem</h4>
+                                    <p>Domaći humus sa začinskim povrćem</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Pečena paprika</h4>
+                                    <p>Sa belim lukom i peršunom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-utensils"></i>
+                            Glavna jela
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Pasulj sa povrćem</h4>
+                                    <p>Tradicionalni pasulj bez mesa</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Đuveč</h4>
+                                    <p>Pirinač sa povrćem iz rerne</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Prženi karpovi</h4>
+                                    <p>Sveža riba sa pomfritom</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Pečene tikvice i patlidžan</h4>
+                                    <p>Sa sosom od paradajza i začinskim biljem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-cookie-bite"></i>
+                            Dezert
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Voćna salata</h4>
+                                    <p>Sezonsko voće sa medom</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Posna torta</h4>
+                                    <p>Čokoladna ili voćna bez mleka i jaja</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-wine-glass"></i>
+                            Piće
+                        </h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Prirodni sokovi</h4>
+                                    <p>Pomorandža, jabuka, nar</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Čajevi</h4>
+                                    <p>Zeleni, crni, voćni čajevi</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h4>Mineralna voda</h4>
+                                    <p>Gazirana i negazirana</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-note" data-aos="fade-up">
+                <p><i class="fas fa-info-circle"></i> Meni se prilagođava Vašim željama i broju gostiju. Kontaktirajte nas za personalizovanu ponudu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Šta nudimo</span>
+                <h2 class="section-title">Naše usluge</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rings-wedding"></i>
+                    </div>
+                    <h3>Venčanja</h3>
+                    <p>Idealan prostor da svoj najlepši dan učinite bajkovitim i nezaboravnim</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cake-candles"></i>
+                    </div>
+                    <h3>Proslave</h3>
+                    <p>Dečiji rođendani, punoletstva, godišnjice ili drugi Vama bitni datumi</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Korporativne svečanosti</h3>
+                    <p>Jubilej firme, novogodišnje proslave, prezentacija novih proizvoda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Zašto izabrati Stari Grad</span>
+                <h2 class="section-title">Savršen prostor za Vaše venčanje</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Profesionalno osoblje</h3>
+                    <p>Dobro organizovano osoblje i uigran tim sve Vaše želje i zahteve može lako da sprovede u delo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Dugogodišnje iskustvo</h3>
+                    <p>Veliki broj organizovanih svečanosti je garant da na Vašoj proslavi ne može ništa krenuti pogrešno</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Odlična lokacija</h3>
+                    <p>Savršena lokacija koja je lako dostupna svim Vašim gostima</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Vrhunska kuhinja</h3>
+                    <p>Bogat meni pripremljen od strane iskusnih kuvara od najkvalitetnijih sastojaka</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Parking prostor</h3>
+                    <p>Prostran i obezbeđen parking za sve Vaše goste</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Vrhunska tehnika</h3>
+                    <p>Moderno ozvučenje i osvetljenje za savršenu atmosferu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Pogledajte naš prostor</span>
+                <h2 class="section-title">Galerija</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="slike/stari grad.webp" alt="Stari Grad Event Hall">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="slike/unnamed.webp" alt="Stari Grad Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="slike/unnamed (1).webp" alt="Stari Grad Event">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section id="virtual-tour" class="virtual-tour">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">3D Virtuelna tura</span>
+                <h2 class="section-title">Virtuelna šetnja našim event centrom</h2>
+                <p class="section-description">
+                    Pogledajte naš prostor u 360° prikazu iz svakog ugla i osetite atmosferu 
+                    kao da ste ovde u poseti
+                </p>
+            </div>
+            <div class="tour-container">
+                <div id="panorama"></div>
+                <div class="tour-controls">
+                    <button class="tour-btn" id="prevScene">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Prethodna</span>
+                    </button>
+                    <div class="tour-info">
+                        <span id="sceneTitle">Glavni ulaz</span>
+                    </div>
+                    <button class="tour-btn" id="nextScene">
+                        <span>Sledeća</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Recenzije</span>
+                <h2 class="section-title">Šta klijenti kažu o nama</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Predivno mesto, prijatno osoblje i odlična hrana! Vrlo su posvećeni svom poslu. 
+                        Pomogli su nam da organizujemo savršeno venčanje. Hvala svima!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Marija Petrović</h4>
+                        <span>Mlada</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Usluga profesionalna! Hrana preukusna, atmosfera fenomenalna. 
+                        Sve je na nivou!!! Ocena: čista 10-ka!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Stefan Jovanović</h4>
+                        <span>Mladoženja</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Bili smo na svadbi kod prijatelja i toliko nam se sve dopalo da smo i mi zakazali 
+                        svoju proslavu ovde. Jedva čekamo! Sve preporuke!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Ana Nikolić</h4>
+                        <span>Gošća</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar/Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Proverite dostupnost</span>
+                <h2 class="section-title">Kalendar slobodnih termina</h2>
+                <p class="section-description">Izaberite datum i proverite dostupnost naše sale za Vaš događaj</p>
+            </div>
+            
+            <div class="booking-content">
+                <div class="calendar-wrapper" data-aos="fade-right">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="calendar-title">
+                            <h3 id="currentMonth">Januar 2026</h3>
+                        </div>
+                        <button class="calendar-nav" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-color available"></span>
+                            <span>Slobodan</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color booked"></span>
+                            <span>Zauzet</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color selected"></span>
+                            <span>Izabran</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="calendar-day-names">
+                            <div>Pon</div>
+                            <div>Uto</div>
+                            <div>Sre</div>
+                            <div>Čet</div>
+                            <div>Pet</div>
+                            <div>Sub</div>
+                            <div>Ned</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays">
+                            <!-- Days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-info-panel" data-aos="fade-left">
+                    <div class="selected-date-info" id="selectedDateInfo">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Izaberite datum</h3>
+                        <p>Kliknite na slobodan datum u kalendaru da biste započeli rezervaciju</p>
+                    </div>
+                    
+                    <div class="booking-details" id="bookingDetails" style="display: none;">
+                        <div class="detail-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Datum je dostupan!</h3>
+                        </div>
+                        <div class="selected-date-display">
+                            <i class="fas fa-calendar"></i>
+                            <span id="selectedDateDisplay">15. Januar 2026</span>
+                        </div>
+                        <div class="available-slots">
+                            <h4>Dostupni termini:</h4>
+                            <div class="slots-grid" id="availableSlots">
+                                <button class="time-slot" data-time="12:00">
+                                    <i class="fas fa-clock"></i>
+                                    <span>12:00</span>
+                                </button>
+                                <button class="time-slot" data-time="18:00">
+                                    <i class="fas fa-clock"></i>
+                                    <span>18:00</span>
+                                </button>
+                                <button class="time-slot" data-time="20:00">
+                                    <i class="fas fa-clock"></i>
+                                    <span>20:00</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-book" id="proceedToBooking">
+                            <span>Nastavite sa rezervacijom</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="booking-statistics">
+                        <div class="stat-box">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <strong id="availableDatesCount">12</strong>
+                                <span>slobodnih dana ovog meseca</span>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-percent"></i>
+                            <div>
+                                <strong>10%</strong>
+                                <span>popust radnim danima</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Kontaktirajte nas</span>
+                <h2 class="section-title">Pošaljite upit</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>+381 64 123 4567</p>
+                            <p>+381 11 234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@starigrad.rs</p>
+                            <p>rezervacije@starigrad.rs</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresa</h4>
+                            <p>Ulica Stari Grad 123</p>
+                            <p>11000 Beograd, Srbija</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Radno vreme</h4>
+                            <p>Ponedeljak - Nedelja</p>
+                            <p>09:00 - 23:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email adresa" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="hallType" name="hallType" required>
+                                <option value="">Izaberite salu</option>
+                                <option value="velika">Velika sala (za venčanja)</option>
+                                <option value="mala">Mala sala (za proslave)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="eventType" name="eventType" required>
+                                <option value="">Tip događaja</option>
+                                <option value="wedding">Venčanje</option>
+                                <option value="birthday">Rođendan</option>
+                                <option value="corporate">Korporativni događaj</option>
+                                <option value="anniversary">Godišnjica</option>
+                                <option value="communion">Krštenje/Pričest</option>
+                                <option value="other">Ostalo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="selectedDateField" name="selectedDate" placeholder="Izabrani datum (kliknite u kalendaru)" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="selectedTimeField" name="selectedTime" placeholder="Izabrano vreme" readonly>
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea id="message" name="message" rows="4" placeholder="Vaša poruka" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>POŠALJI UPIT</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Stari Grad Event Hall</h3>
+                    <p>Gde se tradicija susreće sa elegancijom. Vaš izbor za nezaboravne trenutke.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Brzi linkovi</h4>
+                    <ul>
+                        <li><a href="#home">Naslovna</a></li>
+                        <li><a href="#about">O nama</a></li>
+                        <li><a href="#services">Usluge</a></li>
+                        <li><a href="#gallery">Galerija</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +381 64 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@starigrad.rs</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Beograd, Srbija</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stari Grad Event Hall. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Gallery Modal -->
+    <div class="modal" id="galleryModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Include Pannellum for 360 Virtual Tour -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
