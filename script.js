@@ -42,39 +42,17 @@ window.addEventListener('scroll', () => {
 
 // ===== Hero Slider =====
 const slides = document.querySelectorAll('.hero-slide');
-const prevSlideBtn = document.getElementById('prevSlide');
-const nextSlideBtn = document.getElementById('nextSlide');
-const sliderDotsContainer = document.getElementById('sliderDots');
 let currentSlide = 0;
 let slideInterval;
 
-// Create dots
-slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('slider-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
-    sliderDotsContainer.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.slider-dot');
-
 function goToSlide(n) {
     slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
     currentSlide = (n + slides.length) % slides.length;
-    
     slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
 }
 
 function nextSlide() {
     goToSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    goToSlide(currentSlide - 1);
 }
 
 // Auto slide
@@ -86,25 +64,16 @@ function stopSlideshow() {
     clearInterval(slideInterval);
 }
 
-if (prevSlideBtn && nextSlideBtn) {
-    prevSlideBtn.addEventListener('click', () => {
-        prevSlide();
-        stopSlideshow();
-        startSlideshow();
-    });
-
-    nextSlideBtn.addEventListener('click', () => {
-        nextSlide();
-        stopSlideshow();
-        startSlideshow();
-    });
-
-    // Start auto slideshow
+// Start auto slideshow
+if (slides.length > 0) {
     startSlideshow();
-
+    
     // Pause on hover
-    document.querySelector('.hero').addEventListener('mouseenter', stopSlideshow);
-    document.querySelector('.hero').addEventListener('mouseleave', startSlideshow);
+    const heroElement = document.querySelector('.hero');
+    if (heroElement) {
+        heroElement.addEventListener('mouseenter', stopSlideshow);
+        heroElement.addEventListener('mouseleave', startSlideshow);
+    }
 }
 
 // ===== Smooth Scroll =====
